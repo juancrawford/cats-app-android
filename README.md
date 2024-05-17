@@ -8,6 +8,7 @@ CatsApp is an Android application that displays information about different cat 
 - View detailed information about each cat breed.
 - Use shared element transition for smooth transition effects.
 - Utilize the Glide library for image loading.
+- Use MVVM architecture with databinding.
 
 ## Running the Application
 
