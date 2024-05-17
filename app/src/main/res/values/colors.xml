@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="accentColor">#FF9800</color>
+    <color name="primaryColor">#1A5E32</color>
+    <color name="primaryLightColor">#4A8C5C</color>
+    <color name="primaryDarkColor">#00330B</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="background">#FAFAFA</color>
+    <color name="colorPrimaryText">#212121</color>
+    <color name="colorSecondaryText">#727272</color>
+    <color name="transparent_navy_darker_light">#621A5E32</color>
+    <color name="transparent_navy_darker_center">#821A5E32</color>
+</resources>

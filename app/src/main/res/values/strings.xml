@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">CatsApp</string>
+    <string name="text_retry_button">Retry</string>
+    <string name="text_lost_connection_error_message">Lost connection with the server! please try again!</string>
+    <string name="text_description_lbl">Description</string>
+    <string name="transition_toolbar">ToolbarTransition</string>
+</resources>
