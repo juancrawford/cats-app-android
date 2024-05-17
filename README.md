@@ -17,7 +17,7 @@ To run CatsApp on an Android device or emulator, follow these steps:
 1. Clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/your-username/cat-app.git
+git clone https://github.com/juancrawford/cats-app-android.git
 ```
 
 2. Open the project in Android Studio.
