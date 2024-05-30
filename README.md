@@ -10,6 +10,11 @@ CatsApp is an Android application that displays information about different cat 
 - Utilize the Glide library for image loading.
 - Use MVVM architecture with databinding.
 
+## Screenshots
+
+![alt text](https://github.com/juancrawford/cats-app-android/blob/main/screenshots/Screenshot_1717063493.png)
+![alt text](https://github.com/juancrawford/cats-app-android/blob/main/screenshots/Screenshot_1717063501.png)
+
 ## Running the Application
 
 To run CatsApp on an Android device or emulator, follow these steps:
