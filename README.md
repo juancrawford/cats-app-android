@@ -12,11 +12,9 @@ CatsApp is an Android application that displays information about different cat 
 
 ## Screenshots
 
-Main screen
-![alt text](https://github.com/juancrawford/cats-app-android/blob/main/screenshots/Screenshot_1717063493.png)
-
-Detail screen
-![alt text](https://github.com/juancrawford/cats-app-android/blob/main/screenshots/Screenshot_1717063501.png)
+|Main screen      | Detail screen      |
+|------------|-------------|
+| ![alt text](https://github.com/juancrawford/cats-app-android/blob/main/screenshots/Screenshot_1717063493.png) | ![alt text](https://github.com/juancrawford/cats-app-android/blob/main/screenshots/Screenshot_1717063501.png) |
 
 ## Running the Application
 
