@@ -101,6 +101,6 @@ class DetailActivityTest {
      */
     @Test
     fun testCatDescriptionDisplayed() {
-        onView(withText(cat.breeds.first().description)).check(matches(isDisplayed()))
+        onView(withText(cat.breeds?.firstOrNull()?.description)).check(matches(isDisplayed()))
     }
 }

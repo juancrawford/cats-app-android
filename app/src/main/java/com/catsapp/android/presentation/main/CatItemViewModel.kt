@@ -26,11 +26,11 @@ class CatItemViewModel(
      * The title of the cat.
      */
     @get:Bindable
-    var title: String = cat.breeds.firstOrNull()?.name.orEmpty()
+    var title: String = cat.breeds?.firstOrNull()?.name.orEmpty()
 
     /**
      * The subtitle of the cat.
      */
     @get:Bindable
-    var subTitle: String = cat.breeds.firstOrNull()?.description.orEmpty()
+    var subTitle: String = cat.breeds?.firstOrNull()?.description.orEmpty()
 }

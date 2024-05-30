@@ -35,7 +35,7 @@ class DetailViewModel @Inject constructor() : ViewModel() {
      * @param cat The Cat instance containing data to be loaded.
      */
     fun loadData(cat: Cat) {
-        _title.postValue(cat.breeds.firstOrNull()?.name.orEmpty())
-        _description.postValue(cat.breeds.firstOrNull()?.description.orEmpty())
+        _title.postValue(cat.breeds?.firstOrNull()?.name.orEmpty())
+        _description.postValue(cat.breeds?.firstOrNull()?.description.orEmpty())
     }
 }

@@ -9,7 +9,7 @@ import kotlinx.parcelize.Parcelize
  */
 @Parcelize
 data class Cat(
-    val breeds: List<Breed>,
+    val breeds: List<Breed>?,
     val id: String,
     val url: String,
     val width: Int,

@@ -46,6 +46,18 @@
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:listitem="@layout/list_item_cat"/>
 
+            <TextView
+                android:id="@+id/tvRetry"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/appBar"
+                android:textAlignment="gravity"
+                android:gravity="center"
+                android:text="@string/text_lost_connection_error_message_1"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="17sp"
+                android:visibility="gone" />
+
             <androidx.core.widget.ContentLoadingProgressBar
                 android:id="@+id/pbProgress"
                 style="?android:attr/progressBarStyle"

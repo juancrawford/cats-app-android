@@ -59,8 +59,20 @@ class MainActivity : AppCompatActivity() {
             lifecycleScope.launch {
                 lifecycle.repeatOnLifecycle(Lifecycle.State.RESUMED) {
                     catsAdapter.loadStateFlow.collect { loadStates ->
-                        val state = loadStates.refresh
-                        pbProgress.isVisible = state is LoadState.Loading
+                        when(loadStates.refresh) {
+                            is LoadState.Loading -> {
+                                tvRetry.isVisible = false
+                                pbProgress.isVisible = true
+                            }
+                            is LoadState.NotLoading -> {
+                                pbProgress.isVisible = false
+                                tvRetry.isVisible = false
+                            }
+                            is LoadState.Error -> {
+                                pbProgress.isVisible = false
+                                tvRetry.isVisible = true
+                            }
+                        }
                     }
                 }
             }
@@ -74,6 +86,11 @@ class MainActivity : AppCompatActivity() {
                         catsAdapter.retry()
                     }
                 )
+            }
+
+            // Add click listener to the retry button when api call fails
+            tvRetry.setOnClickListener {
+                catsAdapter.retry()
             }
         }
     }
