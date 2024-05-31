@@ -2,7 +2,6 @@ package com.catsapp.android.domain
 
 import com.catsapp.android.data.MockData.mockCats
 import com.catsapp.android.data.APIs
-import com.catsapp.android.domain.BreedUseCase
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.runBlocking
 import org.junit.Before
