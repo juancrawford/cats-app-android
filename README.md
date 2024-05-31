@@ -47,3 +47,6 @@ The app uses the following libraries:
 * Hilt: For dependency injection.
 * Paging 3: For pagination support.
 * Espresso: For UI testing.
+* Robolectric: For Unit testing.
+* Junit: For app testing.
+* Mockito: To create mocks in Unit testing.
