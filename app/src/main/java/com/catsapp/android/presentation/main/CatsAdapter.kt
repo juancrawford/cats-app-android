@@ -25,7 +25,7 @@ import javax.inject.Inject
  * This adapter displays a list of cats using data binding and handles item clicks to navigate to
  * the detail screen with transition animation.
  */
-class CatsAdapter @Inject constructor() :
+open class CatsAdapter @Inject constructor() :
     PagingDataAdapter<CatItemViewModel, CatsAdapter.CatsViewHolder>(differCallback) {
 
     /**
@@ -59,7 +59,7 @@ class CatsAdapter @Inject constructor() :
      *
      * @param binding The view binding instance for the cat item layout.
      */
-    inner class CatsViewHolder(private val binding: ListItemCatBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class CatsViewHolder(val binding: ListItemCatBinding) : RecyclerView.ViewHolder(binding.root) {
 
         /**
          * Binds the itemViewModel with the view.

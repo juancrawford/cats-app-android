@@ -47,8 +47,8 @@ class LoadMoreAdapter(private val retry: () -> Unit) : LoadStateAdapter<LoadMore
      * @param retry A lambda function to retry loading more data.
      */
     inner class LoadMoreViewHolder(
-        private val binding: LoadMoreBinding,
-        private val retry: () -> Unit
+        val binding: LoadMoreBinding,
+        val retry: () -> Unit
     ) : RecyclerView.ViewHolder(binding.root) {
 
         init {

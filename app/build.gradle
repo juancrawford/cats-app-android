@@ -17,7 +17,7 @@ android {
         versionCode 1
         versionName "1.0"
         vectorDrawables.useSupportLibrary = true
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.catsapp.android.HiltTestRunner"
         multiDexEnabled true
     }
 
@@ -36,6 +36,11 @@ android {
     }
     kotlinOptions {
         jvmTarget = '17'
+    }
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
     }
 }
 
@@ -71,9 +76,27 @@ dependencies {
     implementation libs.gson
 
     testImplementation libs.junit
+    testImplementation libs.mockito.core
+    testImplementation libs.mockito.inline
+    testImplementation libs.mockito.kotlin
+    testImplementation libs.kotlinx.coroutines.test
+    testImplementation libs.paging.common.ktx
+    testImplementation libs.androidx.core
+    testImplementation libs.androidx.junit
+    testImplementation libs.androidx.truth
+    testImplementation libs.androidx.core.testing
+    testImplementation libs.robolectric
+
     androidTestImplementation libs.androidx.junit
     androidTestImplementation libs.androidx.rules
     androidTestImplementation libs.androidx.runner
+    androidTestImplementation libs.androidx.truth
     androidTestImplementation libs.androidx.espresso.core
     androidTestImplementation libs.androidx.espresso.contrib
+    androidTestImplementation libs.androidx.core
+    androidTestImplementation libs.kotlinx.coroutines.test
+    androidTestImplementation libs.paging.common.ktx
+    androidTestImplementation libs.androidx.core.testing
+    androidTestImplementation libs.hilt.android.testing
+    kaptAndroidTest libs.hilt.compiler
 }

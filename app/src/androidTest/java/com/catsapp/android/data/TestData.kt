@@ -1,31 +1,15 @@
-package com.catsapp.android
+package com.catsapp.android.data
 
-import android.content.Intent
-import androidx.test.core.app.ApplicationProvider
-import androidx.test.espresso.Espresso.onView
-import androidx.test.espresso.assertion.ViewAssertions.matches
-import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
-import androidx.test.espresso.matcher.ViewMatchers.withId
-import androidx.test.espresso.matcher.ViewMatchers.withText
-import androidx.test.ext.junit.rules.ActivityScenarioRule
-import androidx.test.ext.junit.runners.AndroidJUnit4
+import androidx.paging.CombinedLoadStates
+import androidx.paging.LoadState
+import androidx.paging.LoadStates
 import com.catsapp.android.model.Breed
 import com.catsapp.android.model.Cat
 import com.catsapp.android.model.Weight
-import com.catsapp.android.presentation.detail.DetailActivity
-import org.junit.Rule
-import org.junit.Test
-import org.junit.runner.RunWith
 
-/**
- * Instrumented test class for DetailActivity.
- * This class contains UI tests to verify the behavior of DetailActivity.
- */
-@RunWith(AndroidJUnit4::class)
-class DetailActivityTest {
-
+object TestData {
     // Sample Cat data for testing
-    private val cat = Cat(
+    val cat = Cat(
         breeds = listOf(
             Breed(
                 weight = Weight(
@@ -76,31 +60,39 @@ class DetailActivityTest {
         height = 1200
     )
 
-    // Intent containing the Cat data
-    private val intent = Intent(ApplicationProvider.getApplicationContext(), DetailActivity::class.java).apply {
-        putExtra(DetailActivity.EXTRA_CAT, cat)
-    }
+    // Loading State definition
+    val loadingState = CombinedLoadStates(
+        refresh = LoadState.Loading,
+        prepend = LoadState.NotLoading(endOfPaginationReached = false),
+        append = LoadState.NotLoading(endOfPaginationReached = false),
+        source = LoadStates(
+            refresh = LoadState.Loading,
+            prepend = LoadState.NotLoading(endOfPaginationReached = false),
+            append = LoadState.NotLoading(endOfPaginationReached = false),
+        )
+    )
 
-    // Rule to launch DetailActivity with the intent
-    @get:Rule
-    var activityScenarioRule: ActivityScenarioRule<DetailActivity> = ActivityScenarioRule(intent)
+    // Error State definition
+    val errorState = CombinedLoadStates(
+        refresh = LoadState.Error(Exception("Error")),
+        prepend = LoadState.NotLoading(endOfPaginationReached = false),
+        append = LoadState.NotLoading(endOfPaginationReached = false),
+        source = LoadStates(
+            refresh = LoadState.Error(Exception("Error")),
+            prepend = LoadState.NotLoading(endOfPaginationReached = false),
+            append = LoadState.NotLoading(endOfPaginationReached = false),
+        )
+    )
 
-    /**
-     * Test to verify that UI elements are displayed in DetailActivity.
-     */
-    @Test
-    fun testDetailActivityDisplayed() {
-        onView(withId(R.id.appBar)).check(matches(isDisplayed()))
-        onView(withId(R.id.toolbar)).check(matches(isDisplayed()))
-        onView(withId(R.id.image)).check(matches(isDisplayed()))
-        onView(withId(R.id.tvDescription)).check(matches(isDisplayed()))
-    }
-
-    /**
-     * Test to verify that the Cat's description is displayed in DetailActivity.
-     */
-    @Test
-    fun testCatDescriptionDisplayed() {
-        onView(withText(cat.breeds?.firstOrNull()?.description)).check(matches(isDisplayed()))
-    }
+    // Not Loading State definition
+    val notLoadingState = CombinedLoadStates(
+        refresh = LoadState.NotLoading(endOfPaginationReached = false),
+        prepend = LoadState.NotLoading(endOfPaginationReached = false),
+        append = LoadState.NotLoading(endOfPaginationReached = false),
+        source = LoadStates(
+            refresh = LoadState.NotLoading(endOfPaginationReached = false),
+            prepend = LoadState.NotLoading(endOfPaginationReached = false),
+            append = LoadState.NotLoading(endOfPaginationReached = false),
+        )
+    )
 }

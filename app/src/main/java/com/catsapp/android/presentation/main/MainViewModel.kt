@@ -22,7 +22,7 @@ import javax.inject.Inject
  * @param breedUseCase The use case for fetching cat data.
  */
 @HiltViewModel
-class MainViewModel @Inject constructor(private val breedUseCase: BreedUseCase) : ViewModel() {
+open class MainViewModel @Inject constructor(private val breedUseCase: BreedUseCase) : ViewModel() {
 
     /**
      * Flow of CatItemViewModel instances representing the list of cats.
