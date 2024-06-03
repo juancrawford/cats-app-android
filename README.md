@@ -32,11 +32,15 @@ git clone https://github.com/juancrawford/cats-app-android.git
 
 ## Running Tests
 
-CatsApp includes instrumented tests. To run the tests, follow these steps:
+CatsApp includes instrumented and unit tests. To run the tests, follow these steps:
 
 1. Locate the test classes under the androidTest directory in the app module. Right-click on the desired test class or package and select "Run".
 
-2. Alternatively, you can run all tests at once by right-clicking on the app module directory and selecting "Run tests" or right-clicking on the "ActivityTestSuite".
+2. Locate the test classes under the test directory in the app module. Right-click on the desired test class or package and select "Run".
+
+3. Alternatively, you can run all instrumented tests at once by right-clicking on the app module directory and selecting "Run tests" or right-clicking on the "ActivityTestSuite".
+
+4. Alternatively, you can run all unit tests at once by right-clicking on the app module directory and selecting "Run tests" or right-clicking on the "UnitTestSuite".
 
 ## Dependencies
 
